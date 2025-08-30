@@ -1,0 +1,305 @@
+/* General Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: linear-gradient(120deg, #e0e7ff 0%, #f9f9ff 100%);
+    min-height: 100vh;
+    animation: bgMove 12s ease-in-out infinite alternate;
+    color: #333;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+header {
+    background: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0056b3;
+    box-shadow: 0 2px 12px #6366f1a0;
+    transition: box-shadow 0.3s;
+}
+.logo:hover {
+    box-shadow: 0 4px 24px #6366f1cc;
+}
+
+.logo a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: text-decoration 0.2s;
+}
+
+.logo a .logo-text {
+    text-decoration: none;
+}
+
+.logo a:hover .logo-text {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    padding: 8px 18px;
+    border: 2px solid #6366f1;
+    border-radius: 8px;
+    background: #fff;
+    color: #6366f1;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #e0e7ff;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(90deg,#6366f1,#ec4899);
+    color: #fff;
+    border-color: #ec4899;
+    box-shadow: 0 4px 16px #ec489980;
+    text-decoration: none;
+    z-index: 1;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px #6366f1a0;
+    animation: heroFadeIn 1.2s cubic-bezier(.77,0,.18,1) both;
+}
+
+@keyframes heroFadeIn {
+    0% { opacity: 0; transform: translateY(-40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 16px #ec489980;
+    animation: textPop 1.2s cubic-bezier(.77,0,.18,1) both;
+}
+
+@keyframes textPop {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg,#6366f1,#ec4899);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 12px #6366f1a0;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    animation: buttonGlow 2s infinite alternate;
+}
+
+@keyframes buttonGlow {
+    0% { box-shadow: 0 2px 12px #6366f1a0; }
+    100% { box-shadow: 0 4px 24px #ec489980; }
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(90deg,#ec4899,#6366f1);
+    box-shadow: 0 6px 32px #ec489980;
+}
+
+/* Sections */
+main section {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.7);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #e0e7ff;
+    transition: box-shadow 0.3s, background 0.3s;
+    animation: sectionFadeIn 1.2s cubic-bezier(.77,0,.18,1) both;
+}
+
+@keyframes sectionFadeIn {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #0056b3;
+}
+
+/* Assessment Quiz */
+.assessment-section {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.question-block {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 4px solid #007bff;
+    background: #f9f9f9;
+}
+
+.question-block p {
+    font-weight: 500;
+}
+
+label {
+    margin-right: 15px;
+}
+
+#submit-quiz {
+    display: block;
+    margin: 1.5rem auto 0;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#submit-quiz:hover {
+    background-color: #218838;
+}
+
+#results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #e9f5ff;
+    border: 1px solid #bde0ff;
+    border-radius: 5px;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+/* Career Section */
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.career-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid #007bff;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #343a40;
+    color: white;
+}
+
+#back-home, #return-quiz {
+    display: inline-block;
+    background: #ffc107;
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    font-size: 1rem;
+}
+
+#back-home:hover, #return-quiz:hover {
+    transform: translateY(-3px);
+    background: #ffca2c;
+}
+
+/* Modal Overlay for Quiz */
+#quiz-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+#quiz-modal .modal-content {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    padding: 2rem;
+    max-width: 600px;
+    width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+#close-quiz-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+#close-quiz-modal:hover {
+    background: #c82333;
+}
